@@ -150,7 +150,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 #pragma mark - Private
 
 - (void)addModelClass:(Class)modelClass forPath:(NSString *)path {
-    NSParameterAssert([modelClass isSubclassOfClass:[MTLModel class]]);
+    NSParameterAssert([modelClass conformsToProtocol:@protocol(MTLModel)]);
     NSParameterAssert(path);
 
     NSArray *tokens = nil;
